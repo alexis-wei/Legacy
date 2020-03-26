@@ -1,77 +1,81 @@
-import React from 'react';
-import logo from './Legacy1.svg';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Navbar from 'react-bootstrap/Navbar';
-import Nav from 'react-bootstrap/Nav';
-import NavDropdown from 'react-bootstrap/NavDropdown';
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import FormControl from 'react-bootstrap/FormControl';
-import './App.css';
+import React from "react";
+import logo from "./images/logo-black.svg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import NavDropdown from "react-bootstrap/NavDropdown";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
+import FormControl from "react-bootstrap/FormControl";
+import "./App.css";
+
+const scriptURL =
+  "https://script.google.com/macros/s/AKfycby03rFxoHR_XJQKeQ5ATjdaHvhs2lEt87YSzOAW4mdh-e6MBy1t/exec";
+const form = document.forms["submit-to-google-sheet"];
 
 function App() {
   return (
     <div className="App">
-      <Navbar expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home">
-          <img
-            alt=""
-            src={logo}
-            width="100%"
-            height="30"
-            className="d-inline-block align-top"
-          />{' '}
-          LEGACY
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav" className="justify-content-end">
-          <Form inline>
-            <Nav>
-              <Nav.Link href="#students" className="nav-list">Students</Nav.Link>
-              <Nav.Link href="#investors" className="nav-list">Investors</Nav.Link>
-              <Nav.Link href="#about" className="nav-list">About</Nav.Link>
-            </Nav>
-          </Form>
-          <Form inline>
-            <FormControl type="text" placeholder="Email" className="mr-sm-2 " />
-          </Form>
-          <Form inline>
-            <Button variant="danger">Waitlist Now!</Button>
-          </Form>
-        </Navbar.Collapse>
-      
-      </Navbar>
+      <div className="Landingtitle">
+        <img alt="" src={logo} height="80" />
+        <p>LEGACY</p>
+      </div>
       <body id="content">
         <div id="content-top">
           <div>
-            <h1>Hi this is legacy</h1>
-            <p>Welcome and join us</p>
-            <Button variant="danger">Waitlist Now!</Button>
-          </div>
-          <div  id="image">
-
+            <h1>All the Advantages of being a Legacy </h1>
+            <p>
+              Legacy pairs you with an alumni who will support your education
+              and invest in your future
+            </p>
+            <form>
+              {" "}
+              <input
+                type="text"
+                id="email-input"
+                style={{
+                  height: "60px",
+                  width: "30vw",
+                  fontSize: "20px",
+                  paddingLeft: "20px",
+                  marginRight: "10px"
+                }}
+                name="email"
+                placeholder="Enter Your Email"
+              />
+              <input
+                type="submit"
+                id="email-input"
+                style={{
+                  width: "auto",
+                  paddingLeft: "20px",
+                  paddingRight: "20px",
+                  height: "60px",
+                  fontSize: "20px",
+                  backgroundColor: "#FFF7F7"
+                }}
+                value="Get Early Access"
+                onClick={fetch(scriptURL, {
+                  method: "POST",
+                  body: new FormData(form)
+                })
+                  .then(response => console.log("Success!", response))
+                  .catch(error => console.error("Error!", error.message))}
+              />
+            </form>
           </div>
         </div>
         <div id="as-seen">
           <h2>IN PARTNERSHIP WITH</h2>
           <div id="logos">
-            <img src={ require('./images/Big-Ideas-logo.png') } />
-            <img src={ require('./images/berk-law.jpg') } />
+            <img src={require("./images/Big-Ideas-logo.png")} />
+            <img src={require("./images/berk-law.jpg")} />
           </div>
-          
         </div>
-        <div id="students">
-
-        </div>
-        <div id="investors">
-          
-        </div>
-
+        <div id="students"></div>
+        <div id="investors"></div>
       </body>
-      <footer>
-
-      </footer>
-      
+      <footer></footer>
     </div>
   );
 }
