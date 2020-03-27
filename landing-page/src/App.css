@@ -43,7 +43,7 @@ h2 {
   letter-spacing: 2rem;
   justify-content: center;
   align-items: center;
-  margin-top: 3vh;
+  margin-top: 2vh;
 }
 
 .Landingtitle > img {
@@ -54,8 +54,10 @@ h2 {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   height: auto;
-  margin: 0, 10%, 10%, 10%;
+  margin: 0%, 10%, 10%, 10%;
+  padding-bottom: 120px;
 }
 
 #email-input {
@@ -69,24 +71,39 @@ h2 {
   background-color: white;
   display: flex;
   flex-direction: column;
-  text-align: center;
   justify-content: space-evenly;
-  margin-bottom: 3%;
-  padding-top: 1%;
-  padding-bottom: 1%;
+  margin-bottom: 8%;
+  margin-left: 200px;
+  margin-right: 200px;
 }
 
 #content-top p {
-  margin-top: 50px;
+  margin-top: 20px;
   margin-bottom: 50px;
   font-weight: 300;
   font-size: 30px;
 }
 
+#what-is {
+  height:auto;
+  background-color: crimson;
+  padding-top: 50px;
+  padding-bottom: 80px;
+  width: 100%;
+  color: whitesmoke;
+}
+
+#what-is h2 {
+  font-size: 46px;
+}
+
+#what-is p {
+  font-size: 24px;
+}
+
 #as-seen {
   height: 100px;
   background-color: white;
-  text-align: center;
   padding: 100px;
 }
 

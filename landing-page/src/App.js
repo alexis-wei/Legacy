@@ -1,22 +1,44 @@
 import React from "react";
 import logo from "./images/logo-black.svg";
+import pushToAirtable from './pushToAirtable';
 import "./App.css";
 
-const scriptURL =
-  "https://script.google.com/macros/s/AKfycby03rFxoHR_XJQKeQ5ATjdaHvhs2lEt87YSzOAW4mdh-e6MBy1t/exec";
-const theForm = document.forms["submit-to-google-sheet"];
+function sendFeedback(props) {
+  const { email } = props;
+
+  return pushToAirtable({ email });
+}
 
 class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      emailAdd: ""
+      email: '',
+      loading: false
     };
   }
 
-  returnEmail() {}
+  onChange = e => {
+    this.setState({ email: e.target.value });
+  };
+
+  onSubmit = e => {
+    const { email } = this.state;
+    e.preventDefault();
+    this.setState({ loading: true }, () => {
+      sendFeedback({
+        email
+      })
+    });
+    this.setState({
+      email: '',
+      loading: false
+    });
+  };
+
 
   render() {
+    const { email } = this.state;
     return (
       <div className="App">
         <div className="Landingtitle">
@@ -25,43 +47,47 @@ class App extends React.Component {
         </div>
         <body id="content">
           <div id="content-top">
-            <div>
-              <h1>All the Advantages of being a Legacy </h1>
-              <p>
-                Legacy pairs you with an alumni who will support your education
-                and invest in your future
-              </p>
-              <form name="submit-to-google-sheet">
-                {" "}
-                <input
-                  type="text"
-                  id="email-input"
-                  style={{
-                    height: "60px",
-                    width: "30vw",
-                    fontSize: "20px",
-                    paddingLeft: "20px",
-                    marginRight: "10px"
-                  }}
-                  name="email"
-                  placeholder="Enter Your Email"
-                />
-                <input
-                  type="submit"
-                  id="email-input"
-                  style={{
-                    width: "auto",
-                    paddingLeft: "20px",
-                    paddingRight: "20px",
-                    height: "60px",
-                    fontSize: "20px",
-                    backgroundColor: "#FFF7F7"
-                  }}
-                  value="Get Early Access"
-                  onClick={this.returnEmail}
-                />
-              </form>
-            </div>
+            <h1>All the Advantages of being a Legacy </h1>
+            <p>
+              Legacy pairs you with an alumni in your industry who will help finance your education
+              and mentor your future through an Income Share Agreement
+            </p>
+            <form onSubmit={this.onSubmit} >
+              {" "}
+              <input
+                type="text"
+                id="email-input"
+                style={{
+                  height: "60px",
+                  width: "30vw",
+                  fontSize: "20px",
+                  paddingLeft: "20px",
+                  marginRight: "10px"
+                }}
+                name="email"
+                placeholder="Enter Your Email"
+                value={email}
+                onChange={this.onChange}
+              />
+              <button
+                type="submit"
+                id="email-input"
+                disabled={this.state.loading}
+                style={{
+                  width: "auto",
+                  paddingLeft: "20px",
+                  paddingRight: "20px",
+                  height: "60px",
+                  fontSize: "20px",
+                  backgroundColor: "#FFF7F7"
+                }}>
+              {this.state.loading ? 'Sending...' : 'Get Early Access'}
+              </button>
+            </form>
+          </div>
+          <div id="what-is">
+              <h2>Hello! We’re Legacy.</h2>
+              <p>We’re a couple of international first-gen Berkeley students who know how scary it is to think about tuition and college</p>
           </div>
           <div id="as-seen">
             <h2>IN PARTNERSHIP WITH</h2>
