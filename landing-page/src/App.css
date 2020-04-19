@@ -109,6 +109,10 @@ footer {
   font-style: italic;
 }
 
+.side-by-side {
+  display: flex;
+  flex-direction: row;
+}
 
 h1 {
   font-size: 60px;
@@ -211,6 +215,12 @@ h2 {
   margin-top:0px;
 }
 
+#sub-logo{
+  margin-right: 30px;
+  margin-top: 5px;
+  width: 30px;
+}
+
 #info {
   width: 430px;
   margin-left: 50px;
@@ -219,13 +229,13 @@ h2 {
 }
 
 #info h1 {
-  
-  font-size: 30px;
+  margin-top: 0px;
+  font-size: 24px;
 }
 
 #info p {
   margin-top: 0px;
-  font-size: 30px;
+  font-size: 24px;
 }
 
 #as-seen {
