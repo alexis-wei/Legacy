@@ -2,7 +2,6 @@
   margin: 0;
   width: 100%;
   height: 100%;
-  font-family: halyard-display, sans-serif;
 }
 
 header {
@@ -11,16 +10,111 @@ header {
 
 footer {
   height: 400px;
-  background-color: crimson;
+  background-color: #E0385A;
 }
 
-h1 {
+.extralight {
+  font-family: halyard-display, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.extralight-i {
+  font-family: halyard-display, sans-serif;
+  font-weight: 100;
+  font-style: italic;
+}
+
+.light {
+  font-family: halyard-display, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.light-i {
+  font-family: halyard-display, sans-serif;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.book {
+  font-family: halyard-display, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.book-i {
+  font-family: halyard-display, sans-serif;
+  font-weight: 300;
+  font-style: italic;
+}
+
+.reg {
+  font-family: halyard-display, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ital {
+  font-family: halyard-display, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.medium {
+  font-family: halyard-display, sans-serif;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.medium-i {
+  font-family: halyard-display, sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.semibold {
+  font-family: halyard-display, sans-serif;
   font-weight: 600;
+  font-style: normal;
+}
+
+.semibold-i {
+  font-family: halyard-display, sans-serif;
+  font-weight: 600;
+  font-style: italic;
+}
+
+.bold {
+  font-family: halyard-display, sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.bold-i {
+  font-family: halyard-display, sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.black {
+  font-family: halyard-display, sans-serif;
+  font-weight: 900;
+  font-style: normal;
+}
+
+.black-i {
+  font-family: halyard-display, sans-serif;
+  font-weight: 900;
+  font-style: italic;
+}
+
+
+h1 {
   font-size: 60px;
 }
 
 h2 {
-  font-weight: 600;
   font-size: 28px;
   text-align: center;
 }
@@ -73,8 +167,8 @@ h2 {
   flex-direction: column;
   justify-content: space-evenly;
   margin-bottom: 8%;
-  margin-left: 200px;
-  margin-right: 200px;
+  margin-left: 340px;
+  margin-right: 340px;
 }
 
 #content-top p {
@@ -84,21 +178,54 @@ h2 {
   font-size: 30px;
 }
 
+#intro {
+  display: flex;
+  flex-direction: row;
+  text-align:left;
+}
+
 #what-is {
-  height:auto;
-  background-color: crimson;
-  padding-top: 50px;
-  padding-bottom: 80px;
-  width: 100%;
+  background-color: #E0385A;
+  display: flex;
+  flex-direction: column;
+  justify-content:flex-start;
+  align-items: flex-start;
+  padding: 50px 100px 50px 50px ;
+  margin-right:50px;
+  width: 400px;
+  height: 400px;
   color: whitesmoke;
+  box-shadow: 30px 30px #BFBFBF;
 }
 
 #what-is h2 {
-  font-size: 46px;
+  font-size: 70px;
+  line-height: 70px;
+  text-align:left;
+  margin-top: 10px;
+  margin-bottom:20px;
 }
 
 #what-is p {
   font-size: 24px;
+  margin-top:0px;
+}
+
+#info {
+  width: 430px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  padding-top: 120px;
+}
+
+#info h1 {
+  
+  font-size: 30px;
+}
+
+#info p {
+  margin-top: 0px;
+  font-size: 30px;
 }
 
 #as-seen {
@@ -116,4 +243,9 @@ div#logos > img {
   margin-left: 60px;
   margin-right: 60px;
   height: 60px;
+}
+
+#foot {
+  color: whitesmoke;
+  padding: 50px 50px 50px 100px;
 }
