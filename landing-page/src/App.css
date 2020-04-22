@@ -147,6 +147,13 @@ h2 {
 .Landingtitle > img {
   margin-right: 50px;
 }
+
+#submission {
+  display: inline-block;
+  -webkit-appearance: none;
+}
+
+
 #content {
   display: flex;
   flex-direction: column;
@@ -159,9 +166,11 @@ h2 {
 }
 
 #email-input {
-  color: "#707070";
-  border-color: "#707070";
-  border-width: "0.5px";
+  height: 60px;
+  width: auto;
+  padding: 0px 20px;
+  margin: 5px 10px;
+  font-size: 20px;
 }
 
 #content-top {

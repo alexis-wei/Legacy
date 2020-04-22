@@ -33,6 +33,8 @@ class App extends React.Component {
       email: '',
       loading: false
     };
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit= this.onSubmit.bind(this);
   }
 
   onChange = e => {
@@ -71,37 +73,32 @@ class App extends React.Component {
             </p>
             <form onSubmit={this.onSubmit} >
               {" "}
-              <input
-                type="email"
-                id="email-input"
-                style={{
-                  height: "60px",
-                  width: "30vw",
-                  fontSize: "20px",
-                  paddingLeft: "20px",
-                  marginRight: "10px"
-                }}
-                name="email"
-                placeholder="Enter Your Email"
-                value={email}
-                onChange={this.onChange}
-              />
-              <button
-                type="submit"
-                id="email-input"
-                disabled={this.state.loading}
-                style={{
-                  width: "auto",
-                  paddingLeft: "20px",
-                  paddingRight: "20px",
-                  height: "60px",
-                  fontSize: "20px",
-                  color: "white:",
-                  backgroundColor: "#E0385A",
-                  fontWeight: '500'
-                }}>
-              {this.state.loading ? 'Sending...' : 'Get Early Access'}
-              </button>
+              <div id="submission">
+                <input
+                  type="email"
+                  id="email-input"
+                  className="book"
+                  style={{
+                    width: "30vw"
+                  }}
+                  name="email"
+                  placeholder="Enter Your Email"
+                  value={this.state.email}
+                  onChange={this.onChange}
+                />
+                <button
+                  type="submit"
+                  id="email-input"
+                  className="medium"
+                  disabled={this.state.loading}
+                  style={{
+                    color: 'white',
+                    backgroundColor: "#E0385A",
+                    outline: "none"
+                  }}>
+                {this.state.loading ? 'Sending...' : 'GET EARLY ACCESS'}
+                </button>
+              </div>
             </form>
           </div>
           <div id="intro">
